@@ -458,39 +458,9 @@ $competition = $_GET['competition'];
                         document.getElementById(`team1_sf${i - 1}-logo`).src = imgSrc1SF;
                         document.getElementById(`team2_sf${i - 1}-logo`).src = imgSrc2SF;
                         updateFinal();
-                        // updateTeamImagesForFinal();
                         updateSemiFinals();
                     }
-                    //  // Finale
-                    //  for (let i = 2; i < rows.length; i++) {
-                    //     const columns = rows[i];
-                    //     const lieuSF = columns[1];
-                    //     const equipe1SF = columns[2];
-                    //     const score1SF = columns[3];
-                    //     const equipe2SF = columns[4];
-                    //     const score2SF = columns[5];
-                    //     const apSF = columns[6];
-
-                    //     // Mettre à jour les valeurs des inputs pour les demi-finales et la finale
-                    //     document.getElementById(`lieu_sf${i - 1}`).value = lieuSF;
-                    //     document.getElementById(`team1_sf${i - 1}`).value = equipe1SF;
-                    //     document.getElementById(`score1_sf${i - 1}`).value = score1SF;
-                    //     document.getElementById(`team2_sf${i - 1}`).value = equipe2SF;
-                    //     document.getElementById(`score2_sf${i - 1}`).value = score2SF;
-                    //     // Mettre à jour les valeurs des inputs ap
-                    //     document.getElementById(`ap_sf${i - 1}`).checked = apSF;
-
-                    //     // Mettre à jour les images des équipes pour les demi-finales et la finale
-                    //     const imgSrc1SF = equipe1SF ? `images/Rugby/${camelize(equipe1SF)}.png` : 'images/Rugby/xx.png';
-                    //     const imgSrc2SF = equipe2SF ? `images/Rugby/${camelize(equipe2SF)}.png` : 'images/Rugby/xx.png';
-
-                    //     document.getElementById(`team1_sf${i - 1}-logo`).src = imgSrc1SF;
-                    //     document.getElementById(`team2_sf${i - 1}-logo`).src = imgSrc2SF;
-                    //     updateFinal();
-                    //     // updateTeamImagesForFinal();
-                    //     updateSemiFinals();
-                    // }
-                   
+                    
                 })
                 .catch(error => console.log('Erreur de chargement du fichier CSV :', error));
         };
@@ -635,12 +605,13 @@ $competition = $_GET['competition'];
             // Image par défaut
             const defaultImage = 'xx.png';
             
+            // Mettre à jour les images des quarts de finale
             const team1_qf1_logo = document.getElementById('team1_qf1-logo');
             const team2_qf1_logo = document.getElementById('team2_qf1-logo');
             const team1_qf2_logo = document.getElementById('team1_qf2-logo');
             const team2_qf2_logo = document.getElementById('team2_qf2-logo');
-            // Mettre à jour les images des quarts de finale
-           team1_qf1_logo.src = getImagePath(document.getElementById('team1_qf1').value, imagePath, defaultImage);
+            
+            team1_qf1_logo.src = getImagePath(document.getElementById('team1_qf1').value, imagePath, defaultImage);
             team2_qf1_logo.src = getImagePath(document.getElementById('team2_qf1').value, imagePath, defaultImage);
             team1_qf2_logo.src = getImagePath(document.getElementById('team1_qf2').value, imagePath, defaultImage);
             team2_qf2_logo.src = getImagePath(document.getElementById('team2_qf2').value, imagePath, defaultImage);
@@ -656,11 +627,10 @@ $competition = $_GET['competition'];
             team1_sf2_logo.src = getImagePath(document.getElementById('team1_sf2').value, imagePath, defaultImage);
             team2_sf2_logo.src = getImagePath(document.getElementById('team2_sf2').value, imagePath, defaultImage);
             
-            // Récupérer les éléments des images d'équipes pour la finale
+            // Mettre à jour les images des équipes pour la finale
             const team1_final_logo = document.getElementById('team1_final-logo');
             const team2_final_logo = document.getElementById('team2_final-logo');
 
-            // Mettre à jour les images des équipes pour la finale
             team1_final_logo.src = getImagePath(document.getElementById('team1_final').value, imagePath, defaultImage);
             team2_final_logo.src = getImagePath(document.getElementById('team2_final').value, imagePath, defaultImage);
       
@@ -684,24 +654,6 @@ $competition = $_GET['competition'];
             return imageSrc;
         }
 
-
-        // Fonction pour mettre à jour les images des équipes pour la finale
-        function updateTeamImagesForFinal() {
-            // Récupérer les éléments des noms d'équipes pour la finale
-            const team1_final_name = document.getElementById('team1_final').value;
-            const team2_final_name = document.getElementById('team2_final').value;
-
-            // Récupérer les éléments des images d'équipes pour la finale
-            const team1_final_logo = document.getElementById('team1_final-logo');
-            const team2_final_logo = document.getElementById('team2_final-logo');
-
-            // Déterminer le nom de fichier d'image par défaut
-            const defaultImage = "xx.png";
-
-            // Mettre à jour les images des équipes pour la finale
-            team1_final_logo.src = team1_final_name ? `images/Rugby/${cleanString(team1_final_name)}.png` : `images/Rugby/${defaultImage}`;
-            team2_final_logo.src = team2_final_name ? `images/Rugby/${cleanString(team2_final_name)}.png` : `images/Rugby/${defaultImage}`;
-        }
     </script>
 
 </body>
