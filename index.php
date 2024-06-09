@@ -330,7 +330,7 @@ $competition = $_GET['competition'];
                 } else {
                     // Pour d'autres types d'input, ajoutez leur valeur au formData
                     formData.append(input.id, input.value);
-                }
+                } 
             });
 
             // Créer un objet XMLHttpRequest
@@ -344,7 +344,7 @@ $competition = $_GET['competition'];
                     // Masquer une fois que la réponse est reçue
                     document.getElementById("loader").style.display = "none";
                     // document.getElementById("download").style.display = "block";
-
+                   
                 }
             };
 
@@ -355,7 +355,9 @@ $competition = $_GET['competition'];
         }
     </script>
     <script>
+        
      window.onload = function() {
+        
             // Charger le fichier CSV
             competition = document.getElementById(`competition`).value;
             console.log(camelize(competition));
@@ -423,11 +425,11 @@ $competition = $_GET['competition'];
                         document.getElementById(`ap_qf${i + 1}`).checked = apQF;
 
                         // Mettre à jour les images des équipes pour les quarts de finale
-                        const imgSrc1QF = equipe1QF ? `images/Rugby/${camelize(equipe1QF)}.png` : 'images/Rugby/xx.png';
-                        const imgSrc2QF = equipe2QF ? `images/Rugby/${camelize(equipe2QF)}.png` : 'images/Rugby/xx.png';
+                        // const imgSrc1QF = equipe1QF ? `images/Rugby/${camelize(equipe1QF)}.png` : 'images/Rugby/xx.png';
+                        // const imgSrc2QF = equipe2QF ? `images/Rugby/${camelize(equipe2QF)}.png` : 'images/Rugby/xx.png';
 
-                        document.getElementById(`team1_qf${i + 1}-logo`).src = imgSrc1QF;
-                        document.getElementById(`team2_qf${i + 1}-logo`).src = imgSrc2QF;
+                        // document.getElementById(`team1_qf${i + 1}-logo`).src = imgSrc1QF;
+                        // document.getElementById(`team2_qf${i + 1}-logo`).src = imgSrc2QF;
                     }
 
                     // Demi-finales
@@ -588,8 +590,10 @@ $competition = $_GET['competition'];
             if (!isNaN(score1_sf1) && !isNaN(score2_sf1) && !isNaN(score1_sf2) && !isNaN(score2_sf2)) {
                 // Appeler la fonction pour mettre à jour la finale
                 updateFinal();
-                updateTeamImage();
+                
             }
+            
+
         }
 
         // Fonction pour mettre à jour la finale en fonction des scores des demi-finales
@@ -620,20 +624,21 @@ $competition = $_GET['competition'];
             if (score1_sf2 == '' || score2_sf2 == '') {
                 document.getElementById('team2_final').value = '';
             }
+            updateTeamImage();
         }
 
         function updateTeamImage() {
+            
+            // Chemin relatif du dossier contenant les images
+            const imagePath = 'images/Rugby/';
+            
+            // Image par défaut
+            const defaultImage = 'xx.png';
+            
             const team1_qf1_logo = document.getElementById('team1_qf1-logo');
             const team2_qf1_logo = document.getElementById('team2_qf1-logo');
             const team1_qf2_logo = document.getElementById('team1_qf2-logo');
             const team2_qf2_logo = document.getElementById('team2_qf2-logo');
-
-            // Chemin relatif du dossier contenant les images
-            const imagePath = 'images/Rugby/';
-
-            // Image par défaut
-            const defaultImage = 'xx.png';
-
             // Mettre à jour les images des quarts de finale
            team1_qf1_logo.src = getImagePath(document.getElementById('team1_qf1').value, imagePath, defaultImage);
             team2_qf1_logo.src = getImagePath(document.getElementById('team2_qf1').value, imagePath, defaultImage);
