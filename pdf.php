@@ -268,7 +268,7 @@ titreTour($pdf, $x_f, $y_f - $spaceHtitle, 'Finale', 'C', $width_team + $width_s
 drawMatchCells($pdf, $x_f, $y_f, $width_team, $width_score, $height_cell, $space_x, $space_y, $csv[4], $border);
 
 
-$pdf->Image('images/' . ddc($_POST['competition']) . '.png', 76, 13, 18.5, 16.6, 'PNG', '', '', $border, false);
+$pdf->Image('images/' . ddc($_POST['competition']) . '.png', 76, 11, 18.5, 18.5, 'PNG', '', '', $border, false);
 $pdf->ImageSVG('images/signature.svg', 86, 71, 15, 3, '', '', '', $border, false);
 ob_end_clean();
 

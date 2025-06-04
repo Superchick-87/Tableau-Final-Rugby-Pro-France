@@ -215,11 +215,11 @@ $competition = $_GET['competition'];
                 <input type="text" id="lieu_qf1" class="lieu">
                 <br>
                 <img id="team1_qf1-logo" alt="">
-                <input type="text" id="team1_qf1" placeholder="Équipe 1" class="equipe" value="Bordeaux-Bègles">
+                <input type="text" id="team1_qf1" placeholder="Équipe 1" class="equipe">
                 <input type="number" id="score1_qf1" placeholder="" class="score">
                 <br>
                 <img id="team2_qf1-logo" alt="">
-                <input type="text" id="team2_qf1" placeholder="Équipe 2" class="equipe" value="Harlequins">
+                <input type="text" id="team2_qf1" placeholder="Équipe 2" class="equipe">
                 <input type="number" id="score2_qf1" placeholder="" class="score">
                 <br>
                 <div class="ap">
@@ -434,11 +434,11 @@ $competition = $_GET['competition'];
                         document.getElementById(`ap_qf${i + 1}`).checked = apQF;
 
                         // Mettre à jour les images des équipes pour les quarts de finale
-                        const imgSrc1QF = equipe1QF ? `images/Rugby/${camelize(equipe1QF)}.png` : 'images/Rugby/xx.png';
-                        const imgSrc2QF = equipe2QF ? `images/Rugby/${camelize(equipe2QF)}.png` : 'images/Rugby/xx.png';
+                        // const imgSrc1QF = equipe1QF ? `images/Rugby/${camelize(equipe1QF)}.png` : 'images/Rugby/xx.png';
+                        // const imgSrc2QF = equipe2QF ? `images/Rugby/${camelize(equipe2QF)}.png` : 'images/Rugby/xx.png';
 
-                        document.getElementById(`team1_qf${i + 1}-logo`).src = imgSrc1QF;
-                        document.getElementById(`team2_qf${i + 1}-logo`).src = imgSrc2QF;
+                        // document.getElementById(`team1_qf${i + 1}-logo`).src = imgSrc1QF;
+                        // document.getElementById(`team2_qf${i + 1}-logo`).src = imgSrc2QF;
                     }
 
                     // Demi-finales
@@ -472,10 +472,6 @@ $competition = $_GET['competition'];
 
                 })
                 .catch(error => console.log('Erreur de chargement du fichier CSV :', error));
-            // Met à jour tous les logos au chargement, même si aucun CSV n'est chargé
-            document.querySelectorAll('.equipe').forEach(input => {
-                updateTeamImage(input.id);
-            });
         };
     </script>
     <script src="js/camelize.js"></script>
@@ -609,19 +605,44 @@ $competition = $_GET['competition'];
             updateTeamImage();
         }
 
-        function updateTeamImage(inputId) {
-            if (!inputId) return;
-            const input = document.getElementById(inputId);
-            const teamName = input.value;
-            const logoId = inputId + "-logo";
-            const logo = document.getElementById(logoId);
+        function updateTeamImage() {
 
-            if (logo) {
-                const logoPath = teamName ? `images/Rugby/${camelize(teamName)}.png` : 'images/Rugby/xx.png';
-                logo.src = logoPath;
-            }
+            // Chemin relatif du dossier contenant les images
+            const imagePath = 'images/Rugby/';
+
+            // Image par défaut
+            const defaultImage = 'xx.png';
+
+            // Mettre à jour les images des quarts de finale
+            const team1_qf1_logo = document.getElementById('team1_qf1-logo');
+            const team2_qf1_logo = document.getElementById('team2_qf1-logo');
+            const team1_qf2_logo = document.getElementById('team1_qf2-logo');
+            const team2_qf2_logo = document.getElementById('team2_qf2-logo');
+
+            team1_qf1_logo.src = getImagePath(document.getElementById('team1_qf1').value, imagePath, defaultImage);
+            team2_qf1_logo.src = getImagePath(document.getElementById('team2_qf1').value, imagePath, defaultImage);
+            team1_qf2_logo.src = getImagePath(document.getElementById('team1_qf2').value, imagePath, defaultImage);
+            team2_qf2_logo.src = getImagePath(document.getElementById('team2_qf2').value, imagePath, defaultImage);
+
+            // Mettre à jour les images des demi-finales
+            const team1_sf1_logo = document.getElementById('team1_sf1-logo');
+            const team2_sf1_logo = document.getElementById('team2_sf1-logo');
+            const team1_sf2_logo = document.getElementById('team1_sf2-logo');
+            const team2_sf2_logo = document.getElementById('team2_sf2-logo');
+
+            team1_sf1_logo.src = getImagePath(document.getElementById('team1_sf1').value, imagePath, defaultImage);
+            team2_sf1_logo.src = getImagePath(document.getElementById('team2_sf1').value, imagePath, defaultImage);
+            team1_sf2_logo.src = getImagePath(document.getElementById('team1_sf2').value, imagePath, defaultImage);
+            team2_sf2_logo.src = getImagePath(document.getElementById('team2_sf2').value, imagePath, defaultImage);
+
+            // Mettre à jour les images des équipes pour la finale
+            const team1_final_logo = document.getElementById('team1_final-logo');
+            const team2_final_logo = document.getElementById('team2_final-logo');
+
+            team1_final_logo.src = getImagePath(document.getElementById('team1_final').value, imagePath, defaultImage);
+            team2_final_logo.src = getImagePath(document.getElementById('team2_final').value, imagePath, defaultImage);
+
         }
-
         // Fonction pour obtenir le chemin de l'image en vérifiant si elle existe
         function getImagePath(teamName, imagePath, defaultImage) {
             // Vérifier si le nom de l'équipe est vide ou nul
@@ -639,21 +660,6 @@ $competition = $_GET['competition'];
                 return imagePath + defaultImage;
             }
             return imageSrc;
-        }
-    </script>
-    <script>
-        // Fonction pour transformer une chaîne en camelCase (comme ton camelize.js)
-        function camelize(str) {
-            return str
-                .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // enlever les accents
-                .replace(/[^a-zA-Z0-9 ]/g, '') // enlever caractères spéciaux
-                .replace(/\s(.)/g, function(match, group1) {
-                    return group1.toUpperCase();
-                })
-                .replace(/\s/g, '')
-                .replace(/^(.)/, function(match, group1) {
-                    return group1.toLowerCase();
-                });
         }
 
         // Fonction pour mettre à jour l'image d'un input
@@ -677,7 +683,6 @@ $competition = $_GET['competition'];
             });
         });
     </script>
-
 
 </body>
 
