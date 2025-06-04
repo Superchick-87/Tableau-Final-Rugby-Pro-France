@@ -75,6 +75,7 @@
     input[type="number"] {
         width: 50px;
     }
+
     input[type="checkbox"] {
         width: 17px;
     }
@@ -89,17 +90,21 @@
         margin-bottom: 7px;
         text-align: center;
     }
-    p{
+
+    p {
         font-style: italic;
     }
-.spaceLeft{
-    margin-left: 7px;
 
-}
-.ap{
-    display: flex;
-    margin: 10px 0px 0px 36px;
-}
+    .spaceLeft {
+        margin-left: 7px;
+
+    }
+
+    .ap {
+        display: flex;
+        margin: 10px 0px 0px 36px;
+    }
+
     img {
         height: 30px;
         width: 30px;
@@ -200,7 +205,7 @@ $competition = $_GET['competition'];
     <div class="center">
         <img src="images/<?php echo ddc($competition); ?>.png" style="width: 110px; height: auto;">
     </div>
-</br>
+    </br>
     <h1>Tableau final</h1>
     <div class="container">
         <input type="text" id="competition" value='<?php echo $competition; ?>' style="display:none;">
@@ -210,15 +215,16 @@ $competition = $_GET['competition'];
                 <input type="text" id="lieu_qf1" class="lieu">
                 <br>
                 <img id="team1_qf1-logo" alt="">
-                <input type="text" id="team1_qf1" readonly placeholder="Équipe 1" class="equipe" value="Bordeaux-Bègles">
+                <input type="text" id="team1_qf1" placeholder="Équipe 1" class="equipe" value="Bordeaux-Bègles">
                 <input type="number" id="score1_qf1" placeholder="" class="score">
                 <br>
                 <img id="team2_qf1-logo" alt="">
-                <input type="text" id="team2_qf1" readonly placeholder="Équipe 2" class="equipe" value="Harlequins">
+                <input type="text" id="team2_qf1" placeholder="Équipe 2" class="equipe" value="Harlequins">
                 <input type="number" id="score2_qf1" placeholder="" class="score">
                 <br>
                 <div class="ap">
-                <input type="checkbox" name="ap_qf1" id="ap_qf1" value="(a. p.)"><p class="spaceLeft">Cocher pour (a. p.)</p>
+                    <input type="checkbox" name="ap_qf1" id="ap_qf1" value="(a. p.)">
+                    <p class="spaceLeft">Cocher pour (a. p.)</p>
                 </div>
             </div>
         </div>
@@ -227,15 +233,16 @@ $competition = $_GET['competition'];
             <input type="text" id="lieu_sf1" class="lieu">
             <br>
             <img id="team1_sf1-logo" alt="">
-            <input type="text" id="team1_sf1" readonly placeholder="Équipe 1" class="equipe">
+            <input type="text" id="team1_sf1" placeholder="Équipe 1" class="equipe">
             <input type="number" id="score1_sf1" placeholder="" class="score">
             <br>
             <img id="team2_sf1-logo" alt="">
-            <input type="text" id="team2_sf1" readonly placeholder="Équipe 2" class="equipe">
+            <input type="text" id="team2_sf1" placeholder="Équipe 2" class="equipe">
             <input type="number" id="score2_sf1" placeholder="" class="score">
             <br>
             <div class="ap">
-            <input type="checkbox" name="ap_sf1" id="ap_sf1" value="(a. p.)"><p class="spaceLeft">Cocher pour (a. p.)</p>
+                <input type="checkbox" name="ap_sf1" id="ap_sf1" value="(a. p.)">
+                <p class="spaceLeft">Cocher pour (a. p.)</p>
             </div>
         </div>
         <div class="semi-final">
@@ -243,15 +250,16 @@ $competition = $_GET['competition'];
             <input type="text" id="lieu_sf2" class="lieu">
             <br>
             <img id="team1_sf2-logo" alt="">
-            <input type="text" id="team1_sf2" readonly placeholder="Équipe 1" class="equipe">
+            <input type="text" id="team1_sf2" placeholder="Équipe 1" class="equipe">
             <input type="number" id="score1_sf2" placeholder="" class="score">
             <br>
             <img id="team2_sf2-logo" alt="">
-            <input type="text" id="team2_sf2" readonly placeholder="Équipe 2" class="equipe">
+            <input type="text" id="team2_sf2" placeholder="Équipe 2" class="equipe">
             <input type="number" id="score2_sf2" placeholder="" class="score">
             <br>
             <div class="ap">
-            <input type="checkbox" name="ap_sf2" id="ap_sf2" value="(a. p.)"><p class="spaceLeft">Cocher pour (a. p.)</p>
+                <input type="checkbox" name="ap_sf2" id="ap_sf2" value="(a. p.)">
+                <p class="spaceLeft">Cocher pour (a. p.)</p>
             </div>
         </div>
         <div>
@@ -260,16 +268,17 @@ $competition = $_GET['competition'];
                 <input type="text" id="lieu_qf2" class="lieu">
                 <br>
                 <img id="team1_qf2-logo" alt="">
-                <input type="text" id="team1_qf2" readonly placeholder="Équipe 1" class="equipe">
+                <input type="text" id="team1_qf2" placeholder="Équipe 1" class="equipe">
                 <input type="number" id="score1_qf2" placeholder="" class="score">
                 <br>
                 <img id="team2_qf2-logo" alt="">
-                <input type="text" id="team2_qf2" readonly placeholder="Équipe 2" class="equipe">
+                <input type="text" id="team2_qf2" placeholder="Équipe 2" class="equipe">
                 <input type="number" id="score2_qf2" placeholder="" class="score">
                 <br>
-            <div class="ap">
-            <input type="checkbox" name="ap_qf2" id="ap_qf2" value="(a. p.)"><p class="spaceLeft">Cocher pour (a. p.)</p>
-            </div>
+                <div class="ap">
+                    <input type="checkbox" name="ap_qf2" id="ap_qf2" value="(a. p.)">
+                    <p class="spaceLeft">Cocher pour (a. p.)</p>
+                </div>
             </div>
         </div>
     </div>
@@ -285,9 +294,10 @@ $competition = $_GET['competition'];
         <input type="text" id="team2_final" readonly placeholder="Équipe 2" class="equipe">
         <input type="number" id="score2_final" placeholder="" class="score">
         <br>
-            <div class="ap">
-            <input type="checkbox" name="ap_final" id="ap_final" value="(a. p.)"><p class="spaceLeft">Cocher pour (a. p.)</p>
-            </div>
+        <div class="ap">
+            <input type="checkbox" name="ap_final" id="ap_final" value="(a. p.)">
+            <p class="spaceLeft">Cocher pour (a. p.)</p>
+        </div>
     </div>
     <div class="center">
         </br>
@@ -323,14 +333,14 @@ $competition = $_GET['competition'];
 
             // Parcourir tous les champs d'entrée
             inputs.forEach(function(input) {
-                 // Vérifier si l'élément est un checkbox
+                // Vérifier si l'élément est un checkbox
                 if (input.type === 'checkbox') {
                     // Ajouter l'état du checkbox au formData
                     formData.append(input.id, input.checked ? '(a. p.)' : 'unchecked');
                 } else {
                     // Pour d'autres types d'input, ajoutez leur valeur au formData
                     formData.append(input.id, input.value);
-                } 
+                }
             });
 
             // Créer un objet XMLHttpRequest
@@ -344,7 +354,7 @@ $competition = $_GET['competition'];
                     // Masquer une fois que la réponse est reçue
                     document.getElementById("loader").style.display = "none";
                     // document.getElementById("download").style.display = "block";
-                   
+
                 }
             };
 
@@ -355,9 +365,8 @@ $competition = $_GET['competition'];
         }
     </script>
     <script>
-        
-     window.onload = function() {
-        
+        window.onload = function() {
+
             // Charger le fichier CSV
             competition = document.getElementById(`competition`).value;
             console.log(camelize(competition));
@@ -371,7 +380,7 @@ $competition = $_GET['competition'];
 
                     // Accéder aux données analysées
                     const rows = parsedData.data;
-                    
+
 
                     // Finale
                     const finaleColumns = rows[4];
@@ -400,7 +409,7 @@ $competition = $_GET['competition'];
                         document.getElementById(`team1_final-logo`).src = imgSrc1Final;
                         document.getElementById(`team2_final-logo`).src = imgSrc2Final;
 
-                        
+
                     } else {
                         console.error("Données de la finale non disponibles ou incomplètes.");
                     }
@@ -425,11 +434,11 @@ $competition = $_GET['competition'];
                         document.getElementById(`ap_qf${i + 1}`).checked = apQF;
 
                         // Mettre à jour les images des équipes pour les quarts de finale
-                        // const imgSrc1QF = equipe1QF ? `images/Rugby/${camelize(equipe1QF)}.png` : 'images/Rugby/xx.png';
-                        // const imgSrc2QF = equipe2QF ? `images/Rugby/${camelize(equipe2QF)}.png` : 'images/Rugby/xx.png';
+                        const imgSrc1QF = equipe1QF ? `images/Rugby/${camelize(equipe1QF)}.png` : 'images/Rugby/xx.png';
+                        const imgSrc2QF = equipe2QF ? `images/Rugby/${camelize(equipe2QF)}.png` : 'images/Rugby/xx.png';
 
-                        // document.getElementById(`team1_qf${i + 1}-logo`).src = imgSrc1QF;
-                        // document.getElementById(`team2_qf${i + 1}-logo`).src = imgSrc2QF;
+                        document.getElementById(`team1_qf${i + 1}-logo`).src = imgSrc1QF;
+                        document.getElementById(`team2_qf${i + 1}-logo`).src = imgSrc2QF;
                     }
 
                     // Demi-finales
@@ -460,14 +469,17 @@ $competition = $_GET['competition'];
                         updateFinal();
                         updateSemiFinals();
                     }
-                    
+
                 })
                 .catch(error => console.log('Erreur de chargement du fichier CSV :', error));
+            // Met à jour tous les logos au chargement, même si aucun CSV n'est chargé
+            document.querySelectorAll('.equipe').forEach(input => {
+                updateTeamImage(input.id);
+            });
         };
     </script>
     <script src="js/camelize.js"></script>
     <script>
-      
         const qfElements = document.querySelectorAll('.quarter-final');
 
         // Ajoutez des écouteurs d'événements pour les quarts de finale
@@ -501,7 +513,7 @@ $competition = $_GET['competition'];
             const score2_qf1 = Number(document.getElementById('score2_qf1').value);
             const score1_qf2 = Number(document.getElementById('score1_qf2').value);
             const score2_qf2 = Number(document.getElementById('score2_qf2').value);
-      
+
             // Vérifier si tous les scores des quarts de finale sont renseignés
             if (!isNaN(score1_qf1) && !isNaN(score2_qf1)) {
                 // Mettre à jour les demi-finales 1
@@ -560,9 +572,9 @@ $competition = $_GET['competition'];
             if (!isNaN(score1_sf1) && !isNaN(score2_sf1) && !isNaN(score1_sf2) && !isNaN(score2_sf2)) {
                 // Appeler la fonction pour mettre à jour la finale
                 updateFinal();
-                
+
             }
-            
+
 
         }
 
@@ -597,44 +609,57 @@ $competition = $_GET['competition'];
             updateTeamImage();
         }
 
-        function updateTeamImage() {
-            
-            // Chemin relatif du dossier contenant les images
-            const imagePath = 'images/Rugby/';
-            
-            // Image par défaut
-            const defaultImage = 'xx.png';
-            
-            // Mettre à jour les images des quarts de finale
-            const team1_qf1_logo = document.getElementById('team1_qf1-logo');
-            const team2_qf1_logo = document.getElementById('team2_qf1-logo');
-            const team1_qf2_logo = document.getElementById('team1_qf2-logo');
-            const team2_qf2_logo = document.getElementById('team2_qf2-logo');
-            
-            team1_qf1_logo.src = getImagePath(document.getElementById('team1_qf1').value, imagePath, defaultImage);
-            team2_qf1_logo.src = getImagePath(document.getElementById('team2_qf1').value, imagePath, defaultImage);
-            team1_qf2_logo.src = getImagePath(document.getElementById('team1_qf2').value, imagePath, defaultImage);
-            team2_qf2_logo.src = getImagePath(document.getElementById('team2_qf2').value, imagePath, defaultImage);
-          
-            // Mettre à jour les images des demi-finales
-            const team1_sf1_logo = document.getElementById('team1_sf1-logo');
-            const team2_sf1_logo = document.getElementById('team2_sf1-logo');
-            const team1_sf2_logo = document.getElementById('team1_sf2-logo');
-            const team2_sf2_logo = document.getElementById('team2_sf2-logo');
+        // function updateTeamImage() {
 
-            team1_sf1_logo.src = getImagePath(document.getElementById('team1_sf1').value, imagePath, defaultImage);
-            team2_sf1_logo.src = getImagePath(document.getElementById('team2_sf1').value, imagePath, defaultImage);
-            team1_sf2_logo.src = getImagePath(document.getElementById('team1_sf2').value, imagePath, defaultImage);
-            team2_sf2_logo.src = getImagePath(document.getElementById('team2_sf2').value, imagePath, defaultImage);
-            
-            // Mettre à jour les images des équipes pour la finale
-            const team1_final_logo = document.getElementById('team1_final-logo');
-            const team2_final_logo = document.getElementById('team2_final-logo');
+        //     // Chemin relatif du dossier contenant les images
+        //     const imagePath = 'images/Rugby/';
 
-            team1_final_logo.src = getImagePath(document.getElementById('team1_final').value, imagePath, defaultImage);
-            team2_final_logo.src = getImagePath(document.getElementById('team2_final').value, imagePath, defaultImage);
-      
+        //     // Image par défaut
+        //     const defaultImage = 'xx.png';
+
+        //     // Mettre à jour les images des quarts de finale
+        //     const team1_qf1_logo = document.getElementById('team1_qf1-logo');
+        //     const team2_qf1_logo = document.getElementById('team2_qf1-logo');
+        //     const team1_qf2_logo = document.getElementById('team1_qf2-logo');
+        //     const team2_qf2_logo = document.getElementById('team2_qf2-logo');
+
+        //     team1_qf1_logo.src = getImagePath(document.getElementById('team1_qf1').value, imagePath, defaultImage);
+        //     team2_qf1_logo.src = getImagePath(document.getElementById('team2_qf1').value, imagePath, defaultImage);
+        //     team1_qf2_logo.src = getImagePath(document.getElementById('team1_qf2').value, imagePath, defaultImage);
+        //     team2_qf2_logo.src = getImagePath(document.getElementById('team2_qf2').value, imagePath, defaultImage);
+
+        //     // Mettre à jour les images des demi-finales
+        //     const team1_sf1_logo = document.getElementById('team1_sf1-logo');
+        //     const team2_sf1_logo = document.getElementById('team2_sf1-logo');
+        //     const team1_sf2_logo = document.getElementById('team1_sf2-logo');
+        //     const team2_sf2_logo = document.getElementById('team2_sf2-logo');
+
+        //     team1_sf1_logo.src = getImagePath(document.getElementById('team1_sf1').value, imagePath, defaultImage);
+        //     team2_sf1_logo.src = getImagePath(document.getElementById('team2_sf1').value, imagePath, defaultImage);
+        //     team1_sf2_logo.src = getImagePath(document.getElementById('team1_sf2').value, imagePath, defaultImage);
+        //     team2_sf2_logo.src = getImagePath(document.getElementById('team2_sf2').value, imagePath, defaultImage);
+
+        //     // Mettre à jour les images des équipes pour la finale
+        //     const team1_final_logo = document.getElementById('team1_final-logo');
+        //     const team2_final_logo = document.getElementById('team2_final-logo');
+
+        //     team1_final_logo.src = getImagePath(document.getElementById('team1_final').value, imagePath, defaultImage);
+        //     team2_final_logo.src = getImagePath(document.getElementById('team2_final').value, imagePath, defaultImage);
+
+        // }
+        function updateTeamImage(inputId) {
+            if (!inputId) return;
+            const input = document.getElementById(inputId);
+            const teamName = input.value;
+            const logoId = inputId + "-logo";
+            const logo = document.getElementById(logoId);
+
+            if (logo) {
+                const logoPath = teamName ? `images/Rugby/${camelize(teamName)}.png` : 'images/Rugby/xx.png';
+                logo.src = logoPath;
+            }
         }
+
         // Fonction pour obtenir le chemin de l'image en vérifiant si elle existe
         function getImagePath(teamName, imagePath, defaultImage) {
             // Vérifier si le nom de l'équipe est vide ou nul
@@ -653,8 +678,44 @@ $competition = $_GET['competition'];
             }
             return imageSrc;
         }
-
     </script>
+    <script>
+        // Fonction pour transformer une chaîne en camelCase (comme ton camelize.js)
+        function camelize(str) {
+            return str
+                .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // enlever les accents
+                .replace(/[^a-zA-Z0-9 ]/g, '') // enlever caractères spéciaux
+                .replace(/\s(.)/g, function(match, group1) {
+                    return group1.toUpperCase();
+                })
+                .replace(/\s/g, '')
+                .replace(/^(.)/, function(match, group1) {
+                    return group1.toLowerCase();
+                });
+        }
+
+        // Fonction pour mettre à jour l'image d'un input
+        function updateTeamImageFromInput(inputId) {
+            const input = document.getElementById(inputId);
+            if (!input) return;
+
+            const logoId = inputId + '-logo';
+            const logoImg = document.getElementById(logoId);
+            if (!logoImg) return;
+
+            const teamName = input.value.trim();
+            const imgSrc = teamName ? `images/Rugby/${camelize(teamName)}.png` : 'images/Rugby/xx.png';
+            logoImg.src = imgSrc;
+        }
+
+        // Ajouter l'événement à tous les inputs de classe .equipe
+        document.querySelectorAll('input.equipe').forEach(input => {
+            input.addEventListener('blur', () => {
+                updateTeamImageFromInput(input.id);
+            });
+        });
+    </script>
+
 
 </body>
 

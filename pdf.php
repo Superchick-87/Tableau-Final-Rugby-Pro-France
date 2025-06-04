@@ -122,8 +122,8 @@ function drawMatchCells($pdf, $x, $y, $width_team, $width_score, $height_cell, $
     $pdf->Cell($width_team + $width_score, $height_cell, $match_data[1], $border, 0, 'L', 1, 1, 1, false, '', 'L');
     // Définition (a. p.)
     $pdf->SetFillColor(0, 0, 0, 0);
-    $pdf->SetXY($x+23, $y+9.2);
-    $pdf->Cell($width_score+1, $height_cell, $match_data[6], $border, 0, 'L', 1, 1, 1, false, '', 'L');
+    $pdf->SetXY($x + 23, $y + 9.2);
+    $pdf->Cell($width_score + 1, $height_cell, $match_data[6], $border, 0, 'L', 1, 1, 1, false, '', 'L');
 
     // Définition de la font et couleurs pour nom des équipes et scores
     $pdf->setCellHeightRatio(1);
@@ -238,12 +238,13 @@ notice($pdf, $x_qf - 1, $y_qf1 + 17, $txt1, $width1);
 
 
 //@ Titre
+$titre = 'Phases finales ' . $_POST['competition'];
 $pdf->setCellPaddings(0, 0, 0, 0);
-$pdf->SetFont('robotomedium', '', 18, '', false);
+$pdf->SetFont('utopiastdblackheadline', '', 18, '', false);
 $pdf->SetTextColor(0, 0, 0, 0);
 $pdf->SetFillColor(90, 10, 65, 15);
 $pdf->SetXY(0, 0);
-$pdf->Cell(101.8, 7.8, $_POST['competition'], $border, 0, 'C', 1);
+$pdf->Cell(101.8, 7.8, $titre, $border, 0, 'C', 1);
 
 //@ Epreuves 1/4
 titreTour($pdf, $x_qf, $y_qf4 + 1 - $spaceHtitle, 'Barrages', 'C', $width_team + $width_score, $border);
