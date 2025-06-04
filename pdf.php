@@ -238,7 +238,7 @@ notice($pdf, $x_qf - 1, $y_qf1 + 17, $txt1, $width1);
 
 
 //@ Titre
-$titre = 'Phases finales ' . $_POST['competition'];
+$titre = 'Les phases finales du ' . $_POST['competition'];
 $pdf->setCellPaddings(0, 0, 0, 0);
 $pdf->SetFont('utopiastdblackheadline', '', 18, '', false);
 $pdf->SetTextColor(0, 0, 0, 0);
