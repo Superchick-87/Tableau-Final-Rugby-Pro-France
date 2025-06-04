@@ -609,44 +609,6 @@ $competition = $_GET['competition'];
             updateTeamImage();
         }
 
-        // function updateTeamImage() {
-
-        //     // Chemin relatif du dossier contenant les images
-        //     const imagePath = 'images/Rugby/';
-
-        //     // Image par défaut
-        //     const defaultImage = 'xx.png';
-
-        //     // Mettre à jour les images des quarts de finale
-        //     const team1_qf1_logo = document.getElementById('team1_qf1-logo');
-        //     const team2_qf1_logo = document.getElementById('team2_qf1-logo');
-        //     const team1_qf2_logo = document.getElementById('team1_qf2-logo');
-        //     const team2_qf2_logo = document.getElementById('team2_qf2-logo');
-
-        //     team1_qf1_logo.src = getImagePath(document.getElementById('team1_qf1').value, imagePath, defaultImage);
-        //     team2_qf1_logo.src = getImagePath(document.getElementById('team2_qf1').value, imagePath, defaultImage);
-        //     team1_qf2_logo.src = getImagePath(document.getElementById('team1_qf2').value, imagePath, defaultImage);
-        //     team2_qf2_logo.src = getImagePath(document.getElementById('team2_qf2').value, imagePath, defaultImage);
-
-        //     // Mettre à jour les images des demi-finales
-        //     const team1_sf1_logo = document.getElementById('team1_sf1-logo');
-        //     const team2_sf1_logo = document.getElementById('team2_sf1-logo');
-        //     const team1_sf2_logo = document.getElementById('team1_sf2-logo');
-        //     const team2_sf2_logo = document.getElementById('team2_sf2-logo');
-
-        //     team1_sf1_logo.src = getImagePath(document.getElementById('team1_sf1').value, imagePath, defaultImage);
-        //     team2_sf1_logo.src = getImagePath(document.getElementById('team2_sf1').value, imagePath, defaultImage);
-        //     team1_sf2_logo.src = getImagePath(document.getElementById('team1_sf2').value, imagePath, defaultImage);
-        //     team2_sf2_logo.src = getImagePath(document.getElementById('team2_sf2').value, imagePath, defaultImage);
-
-        //     // Mettre à jour les images des équipes pour la finale
-        //     const team1_final_logo = document.getElementById('team1_final-logo');
-        //     const team2_final_logo = document.getElementById('team2_final-logo');
-
-        //     team1_final_logo.src = getImagePath(document.getElementById('team1_final').value, imagePath, defaultImage);
-        //     team2_final_logo.src = getImagePath(document.getElementById('team2_final').value, imagePath, defaultImage);
-
-        // }
         function updateTeamImage(inputId) {
             if (!inputId) return;
             const input = document.getElementById(inputId);
